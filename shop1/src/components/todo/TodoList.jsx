@@ -1,22 +1,18 @@
 import React from 'react'
-import { FaRegEdit } from "react-icons/fa";
-const TodoList = () => {
-    let todolist = [
-        'pray', 'make my task for one', 'make one', 'go to gym', 'go to work', 'read quran', 'some entertainment'
-    ]
+import TodoCard from './TodoCard';
+const TodoList = ({todos,handleTodoListDelete,handleTodoListUpdate}) => {
+
     return (
         <div>
             <div>
-                {todolist.map((x,xIndex)=>{
-                    return(
-                        <div className="flex justify-center">
-
-                            <li key={xIndex}>{x}</li>
-                            <FaRegEdit />
-                        </div>
-
-
-                )
+                {todos.map((x, xIndex) => {
+                    return (
+                        <TodoCard key={xIndex} index={xIndex} handleTodoListDelete={handleTodoListDelete} handleTodoListUpdate={handleTodoListUpdate}>
+                            <p>
+                                {x}
+                            </p>
+                        </TodoCard>
+                    )
                 })}
             </div>
         </div>
