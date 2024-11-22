@@ -36,8 +36,7 @@ function App() {
 
     localStorageCache = JSON.parse(localStorageCache).todoList
     setTodoList(localStorageCache)
-    console.log(localStorageCache)
-  },[])
+    },[])
   return (
     <>
 
